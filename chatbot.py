@@ -2,9 +2,11 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
-# Configure Gemini API
 
+
+# Configure Gemini with secret
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+
 
 
 # Load model
@@ -59,4 +61,5 @@ if st.button("Ask"):
 # Display conversation history
 for speaker, msg in st.session_state.history:
     st.markdown(f"**{speaker}:** {msg}")
+
 
